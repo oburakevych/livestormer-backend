@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_livestormer_accounts_Account" items="${accounts}" z="0wjg2GD6oMhTABd9zihMw+prvmQ=">
+        <table:table data="${accounts}" id="l_com_livestormer_accounts_Account" path="/accounts" z="w75zg/EWYigH8kireiHDB/c5bck=">
+            <table:column id="c_com_livestormer_accounts_Account_type" property="type" z="OWMnnZ24OV/z/9f03QGcdaE1X5g="/>
+            <table:column id="c_com_livestormer_accounts_Account_owner" property="owner" z="0mTfdg/v0+ftj+5QYonEg0QS0+g="/>
+        </table:table>
+    </page:list>
+</div>

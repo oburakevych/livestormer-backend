@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_livestormer_accounts_owners_Owner" modelAttribute="owner" path="/owners" versionField="Version" z="XUGna3nvA9Hjo+R8Tb0/AhhOR0s=">
+        <field:input field="name" id="c_com_livestormer_accounts_owners_Owner_name" z="OhdOFGTh+twrLr0NehcoJdxS1EQ="/>
+        <field:textarea field="username" id="c_com_livestormer_accounts_owners_Owner_username" required="true" z="CzW9WRtCxgy2ekaMdJ8Ao2k+5vw="/>
+        <field:textarea field="password" id="c_com_livestormer_accounts_owners_Owner_password" z="mA9d2+lH8yiVG1TI/BoPtoGYWB4="/>
+        <field:textarea field="email" id="c_com_livestormer_accounts_owners_Owner_email" validationMessageCode="field_invalid_email" z="lYqud+5hr3D1wdL0jFoS1kKQnLQ="/>
+        <field:input field="country" id="c_com_livestormer_accounts_owners_Owner_country" z="ENtPCuTLOI5BEcANUVQEbk2647w="/>
+        <field:input field="city" id="c_com_livestormer_accounts_owners_Owner_city" z="wgZpXiRVbwndvGrsTPImc/hHFdU="/>
+        <field:select field="specialities" id="c_com_livestormer_accounts_owners_Owner_specialities" itemValue="id" items="${specialitys}" multiple="true" path="/specialitys" z="ZlYmdMqG5RhN8aPRJsaLSDaaDiA="/>
+    </form:update>
+</div>

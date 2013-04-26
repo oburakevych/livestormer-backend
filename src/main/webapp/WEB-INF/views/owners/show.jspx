@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_livestormer_accounts_owners_Owner" object="${owner}" path="/owners" z="kapxNVDZ8Vll75jFHHAg9N4vj4w=">
+        <field:display field="name" id="s_com_livestormer_accounts_owners_Owner_name" object="${owner}" z="gtGubhJCRZ3qd4LnvQ+QiR8rcFU="/>
+        <field:display field="username" id="s_com_livestormer_accounts_owners_Owner_username" object="${owner}" z="g7cKJH8Issuo58t7hG09UzTML9g="/>
+        <field:display field="password" id="s_com_livestormer_accounts_owners_Owner_password" object="${owner}" z="ri2J28MmJcbHnbAo5NPJLrK2c+o="/>
+        <field:display field="email" id="s_com_livestormer_accounts_owners_Owner_email" object="${owner}" z="NGTau6h6q0F7AJ4B3kJJixsrygQ="/>
+        <field:display field="country" id="s_com_livestormer_accounts_owners_Owner_country" object="${owner}" z="YEEqm8ijsmfY+ASqw1td4RfIWS8="/>
+        <field:display field="city" id="s_com_livestormer_accounts_owners_Owner_city" object="${owner}" z="8vQxa3n1kGmdd+3jZQoZ9cRFZZs="/>
+        <field:display field="specialities" id="s_com_livestormer_accounts_owners_Owner_specialities" object="${owner}" z="g7HkFNmSe5bw9gF9OQdAFSnWxa4="/>
+    </page:show>
+</div>

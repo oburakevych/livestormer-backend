@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_livestormer_accounts_owners_Owner" items="${owners}" z="CPsBlWmREbW/Arhiwq47KBdhNc8=">
+        <table:table data="${owners}" id="l_com_livestormer_accounts_owners_Owner" path="/owners" z="gsphEsQSZX3YaI+C4MC4ksDjTcw=">
+            <table:column id="c_com_livestormer_accounts_owners_Owner_name" property="name" z="Z+CWeb4DOlQasn9gsnZtc6MjXNg="/>
+            <table:column id="c_com_livestormer_accounts_owners_Owner_username" property="username" z="p93IwMCRWdftcj/MXONDnPnBZhE="/>
+            <table:column id="c_com_livestormer_accounts_owners_Owner_password" property="password" z="smWN7CKdlQyPygetaQhEAF8GMyk="/>
+            <table:column id="c_com_livestormer_accounts_owners_Owner_email" property="email" z="EXcHXpCqdZt6QYfgBh0jSHNLY6I="/>
+            <table:column id="c_com_livestormer_accounts_owners_Owner_country" property="country" z="C5Ec2g0/0r8KvAym1Ejf9nt9SGk="/>
+            <table:column id="c_com_livestormer_accounts_owners_Owner_city" property="city" z="5nHdYXV8wY3A+KX9CfK2TAtWzO8="/>
+        </table:table>
+    </page:list>
+</div>

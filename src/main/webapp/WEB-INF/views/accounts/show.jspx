@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_livestormer_accounts_Account" object="${account}" path="/accounts" z="czgso0FITWpvBRMei4gFEwZyr2c=">
+        <field:display field="type" id="s_com_livestormer_accounts_Account_type" object="${account}" z="1+1yUMZJzFIoOSbfO4cNiM9qVIU="/>
+        <field:display field="owner" id="s_com_livestormer_accounts_Account_owner" object="${account}" z="V3mU/ILSRrWi44AogLkmTLhaX8A="/>
+    </page:show>
+</div>

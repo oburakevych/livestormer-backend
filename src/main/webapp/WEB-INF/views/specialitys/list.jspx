@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_livestormer_accounts_owners_specialities_Speciality" items="${specialitys}" z="P5JZccLVAZ5rjYIdyqdp7tO943k=">
+        <table:table data="${specialitys}" id="l_com_livestormer_accounts_owners_specialities_Speciality" path="/specialitys" z="6N0OixGXiw1HBshn1jjirFNr5Cc=">
+            <table:column id="c_com_livestormer_accounts_owners_specialities_Speciality_name" property="name" z="5mkcPf7kan5zRkowxCQEpRvam7w="/>
+            <table:column id="c_com_livestormer_accounts_owners_specialities_Speciality_description" property="description" z="drcl7nKSO4a5/MP5ZmignBK2mWI="/>
+            <table:column id="c_com_livestormer_accounts_owners_specialities_Speciality_type" property="type" z="LqKb9GKDyjBJouJenE1ns3CYecU="/>
+        </table:table>
+    </page:list>
+</div>
