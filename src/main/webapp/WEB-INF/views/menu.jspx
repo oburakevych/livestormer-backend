@@ -18,6 +18,16 @@
         <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
             <menu:item id="i_controller__ownerindex_id" messageCode="global_generic" url="/owner/index" z="/4Blq5nsbjXXq2kR5iIgLtlYWIQ="/>
             <menu:item id="i_controller__accountindex_id" messageCode="global_generic" url="/account/index" z="1QUYm/LGdC9Uai10R0JxPwLbdXI="/>
+            <menu:item id="i_controller__taskindex_id" messageCode="global_generic" url="/task/index" z="eVSbZPcGmrK/qXqFmagCwD8VSzE="/>
+            <menu:item id="i_controller__accountcompletenessindex_id" messageCode="global_generic" url="/accountcompleteness/index" z="YFRANEtfVR/81FwsLmjvR5ESkR0="/>
+        </menu:category>
+        <menu:category id="c_task" z="5/YEXemVsbl4iFvHS/UosIk5vGA=">
+            <menu:item id="i_task_new" messageCode="global_menu_new" url="/tasks?form" z="YotbILlsjTB2PtR5PNSnTnvYdJ4="/>
+            <menu:item id="i_task_list" messageCode="global_menu_list" url="/tasks?page=1&amp;size=${empty param.size ? 10 : param.size}" z="IzVMulpv8+zgMUzz/aHI/gQB7NM="/>
+        </menu:category>
+        <menu:category id="c_accountcompleteness" z="akHgNE3b5wczCGARMIcTgX9sKIk=">
+            <menu:item id="i_accountcompleteness_new" messageCode="global_menu_new" url="/accountcompletenesses?form" z="x8edk307GaTK8vUf7iCDQG2uq4M="/>
+            <menu:item id="i_accountcompleteness_list" messageCode="global_menu_list" url="/accountcompletenesses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="evVSix9lsEGSrt5IYtewjDBTrMI="/>
         </menu:category>
     </menu:menu>
 </div>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_livestormer_accounts_completeness_tasks_Task" object="${task}" path="/tasks" z="Uie705X86+dRhYvY7YdeBkdsjXE=">
+        <field:display field="type" id="s_com_livestormer_accounts_completeness_tasks_Task_type" object="${task}" z="jecpzpwFJXqWD2IxzVMOl5MTFUM="/>
+        <field:display field="name" id="s_com_livestormer_accounts_completeness_tasks_Task_name" object="${task}" z="jEbQ1P3Z8eVSZSSo5lN67X467Ac="/>
+        <field:display field="description" id="s_com_livestormer_accounts_completeness_tasks_Task_description" object="${task}" z="tsksQpRfGc4RpDcY25KXTseXafo="/>
+        <field:display field="code" id="s_com_livestormer_accounts_completeness_tasks_Task_code" object="${task}" z="OXxLzeejPk9z5V+JmWR2A2kjqRI="/>
+    </page:show>
+</div>

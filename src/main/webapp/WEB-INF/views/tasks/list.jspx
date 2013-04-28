@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_livestormer_accounts_completeness_tasks_Task" items="${tasks}" z="7IQOODLfkU6cJe5wpEZWG0kUmGQ=">
+        <table:table data="${tasks}" id="l_com_livestormer_accounts_completeness_tasks_Task" path="/tasks" z="x9vNphY9ZEXKnqlNGE4YH0Il/ms=">
+            <table:column id="c_com_livestormer_accounts_completeness_tasks_Task_type" property="type" z="2Eq/7eTvVvgIGPr3i0EHDVftfgU="/>
+            <table:column id="c_com_livestormer_accounts_completeness_tasks_Task_name" property="name" z="cE1ym7zR4xhC0ndTqElhZcyzOl0="/>
+            <table:column id="c_com_livestormer_accounts_completeness_tasks_Task_description" property="description" z="CeZ2teKYGhVJ6hjHVU4PPT2D358="/>
+            <table:column id="c_com_livestormer_accounts_completeness_tasks_Task_code" property="code" z="t2SrXZC71nh8VgYLpA9Os01Revo="/>
+        </table:table>
+    </page:list>
+</div>

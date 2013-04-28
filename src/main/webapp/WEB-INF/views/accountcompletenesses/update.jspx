@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_livestormer_accounts_completeness_AccountCompleteness" modelAttribute="accountCompleteness" path="/accountcompletenesses" versionField="Version" z="8fR/nkri7Kv4nDRHVtxKjUP0+0M=">
+        <field:select field="account" id="c_com_livestormer_accounts_completeness_AccountCompleteness_account" itemValue="id" items="${accounts}" path="/accounts" z="1VzyVQLoQTnnmRlwEHROZOpj290="/>
+        <field:input field="rate" id="c_com_livestormer_accounts_completeness_AccountCompleteness_rate" z="cE+f2t+JVbJJBM4EHCn1x3aHti4="/>
+        <field:select field="completedTasks" id="c_com_livestormer_accounts_completeness_AccountCompleteness_completedTasks" itemValue="id" items="${taskcompletenesses}" multiple="true" path="/taskcompletenesses" z="kpkA53NlgYPubBIuFiKYE4lHLXo="/>
+    </form:update>
+</div>
