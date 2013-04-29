@@ -25,13 +25,13 @@ public class OwnerController {
         headers.add("Content-Type", "application/json");
         
         if (owner == null) {
-        	return new ResponseEntity<String>("Invalid e-mail or password", headers, HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<String>("errorMessage: 'Invalid e-mail or password'", headers, HttpStatus.NOT_FOUND);
         }
         
         Account account = Account.getAccount(owner);
         
         if (account == null) {
-        	return new ResponseEntity<String>("Invalid username or password", headers, HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<String>("errorMessage: 'Invalid e-mail or password'", headers, HttpStatus.NOT_FOUND);
         }
         
         return new ResponseEntity<String>(account.toJson(), headers, HttpStatus.OK);

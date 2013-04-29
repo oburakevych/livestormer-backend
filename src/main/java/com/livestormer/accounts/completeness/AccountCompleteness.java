@@ -1,12 +1,9 @@
 package com.livestormer.accounts.completeness;
 
-import com.livestormer.accounts.Account;
-import com.livestormer.accounts.completeness.tasks.completeness.TaskCompleteness;
-
-import flexjson.JSONSerializer;
-
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.EntityManager;
 import javax.persistence.ManyToMany;
@@ -17,7 +14,11 @@ import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.json.RooJson;
 import org.springframework.roo.addon.tostring.RooToString;
-import org.springframework.roo.addon.web.mvc.controller.json.RooWebJson;
+
+import com.livestormer.accounts.Account;
+import com.livestormer.accounts.completeness.tasks.completeness.TaskCompleteness;
+
+import flexjson.JSONSerializer;
 
 @RooJavaBean
 @RooToString
@@ -39,6 +40,29 @@ public class AccountCompleteness {
         TypedQuery<AccountCompleteness> q = em.createQuery("SELECT o FROM AccountCompleteness AS o WHERE o.account = :account", AccountCompleteness.class);
         q.setParameter("account", account);
         return q;
+    }
+    
+    public void updateCompleteness(String taskType, String taskCode) {
+    	if (this.rate < 100) {
+    		boolean isModified = false;
+    		for (TaskCompleteness ts : this.taskCompletenesses) {
+    			if (!ts.getIsCompleted() && ts.getTask() != null  && ts.getTask().getIsActive() 
+    					&& ts.getTask().getType().equals(taskType) && ts.getTask().getCode().equals(taskCode)) {
+    				ts.setIsCompleted(true);
+    				ts.setCompletedOnDate(new Date());
+    				
+    				isModified = true;
+    			}
+    		}
+    		
+    		if (isModified) {
+    			this.merge();
+    		}
+    	}
+    }
+    
+    public int calculateRate() {
+    	return 44;
     }
     
     public String toJson() {

@@ -20,6 +20,7 @@
             <menu:item id="i_controller__accountindex_id" messageCode="global_generic" url="/account/index" z="1QUYm/LGdC9Uai10R0JxPwLbdXI="/>
             <menu:item id="i_controller__taskindex_id" messageCode="global_generic" url="/task/index" z="eVSbZPcGmrK/qXqFmagCwD8VSzE="/>
             <menu:item id="i_controller__accountcompletenessindex_id" messageCode="global_generic" url="/accountcompleteness/index" z="YFRANEtfVR/81FwsLmjvR5ESkR0="/>
+            <menu:item id="i_controller__bookmarkindex_id" messageCode="global_generic" url="/bookmark/index" z="E2s6CZMh6NsHw6PG4avVZfuSBQo="/>
         </menu:category>
         <menu:category id="c_task" z="5/YEXemVsbl4iFvHS/UosIk5vGA=">
             <menu:item id="i_task_new" messageCode="global_menu_new" url="/tasks?form" z="YotbILlsjTB2PtR5PNSnTnvYdJ4="/>
