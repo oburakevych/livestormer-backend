@@ -3,6 +3,7 @@
 
 package com.livestormer.accounts.completeness;
 
+import com.livestormer.accounts.Account;
 import com.livestormer.accounts.completeness.AccountCompleteness;
 import com.livestormer.accounts.completeness.AccountCompletenessController;
 import org.springframework.http.HttpHeaders;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 privileged aspect AccountCompletenessController_Roo_Controller_Json {
@@ -80,6 +82,14 @@ privileged aspect AccountCompletenessController_Roo_Controller_Json {
         }
         accountCompleteness.remove();
         return new ResponseEntity<String>(headers, HttpStatus.OK);
+    }
+    
+    @RequestMapping(params = "find=ByAccount", headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> AccountCompletenessController.jsonFindAccountCompletenessesByAccount(@RequestParam("account") Account account) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+        return new ResponseEntity<String>(AccountCompleteness.toJsonArray(AccountCompleteness.findAccountCompletenessesByAccount(account).getResultList()), headers, HttpStatus.OK);
     }
     
 }

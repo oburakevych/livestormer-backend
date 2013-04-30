@@ -1,12 +1,12 @@
 package com.livestormer.accounts;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.livestormer.accounts.activities.Activity;
 import com.livestormer.accounts.completeness.AccountCompleteness;
 import com.livestormer.accounts.completeness.tasks.Task;
 import com.livestormer.accounts.completeness.tasks.completeness.TaskCompleteness;
@@ -43,6 +43,8 @@ public class AccountService {
 			AccountCompleteness ac = generateAccountCompleteness(account, tasks);
 			
 			ac.persist();
+			
+			generateActivity(account);
 		}
 	}
 	
@@ -51,7 +53,7 @@ public class AccountService {
 		ac.setAccount(account);
 		ac.setVersion(0);
 		
-		Set<TaskCompleteness> taskCompletenesses = new HashSet<TaskCompleteness>();
+		List<TaskCompleteness> taskCompletenesses = new ArrayList<TaskCompleteness>();
 		
 		for (Task task : tasks) {
 			TaskCompleteness tc = new TaskCompleteness();
@@ -65,5 +67,9 @@ public class AccountService {
 		ac.setTaskCompletenesses(taskCompletenesses);
 
 		return ac;
+	}
+	
+	private void generateActivity(Account account) {
+		Activity.addActivity(account.getId(), "Account created");
 	}
 }

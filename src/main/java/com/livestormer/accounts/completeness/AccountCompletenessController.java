@@ -22,7 +22,7 @@ public class AccountCompletenessController {
         headers.add("Content-Type", "application/json; charset=utf-8");
         
         Account account = Account.findAccount(accountId);
-        AccountCompleteness ac = AccountCompleteness.findAccountCompletenessesByAccount(account).getSingleResult();
+        AccountCompleteness ac = AccountCompleteness.getAccountCopmpleteness(account);
         
         if (ac == null) {
         	return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);

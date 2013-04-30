@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.livestormer.accounts.activities.Activity;
 import com.livestormer.accounts.bookmarks.Bookmark;
 import com.livestormer.accounts.bookmarks.BookmarkType;
 import com.livestormer.accounts.completeness.AccountCompleteness;
-import com.livestormer.accounts.completeness.tasks.completeness.TaskCompleteness;
 
 @RequestMapping("/account/**")
 @Controller
@@ -45,7 +45,11 @@ public class AccountController {
         
         Account account = Account.findAccount(accountId);
         
-        AccountCompleteness ac = AccountCompleteness.findAccountCompletenessesByAccount(account).getSingleResult();
+        AccountCompleteness ac = AccountCompleteness.getAccountCopmpleteness(account);
+        
+        if (ac.getAccount() != null) {
+        	ac.setAccount(null); // Don't need this data to be transfered all the time. Consider setting Long accountId instead.
+        }
         
         return new ResponseEntity<String>(ac.toJson(), headers, HttpStatus.OK);
     }
@@ -67,9 +71,11 @@ public class AccountController {
         
         Account account = Account.findAccount(accountId);
 	    if (account != null) {
-	    	AccountCompleteness ac = AccountCompleteness.findAccountCompletenessesByAccount(account).getSingleResult();
+	    	AccountCompleteness ac = AccountCompleteness.getAccountCopmpleteness(account);
 	    	
 	    	ac.updateCompleteness("STANDARD", "BOOKMRK");
+	    	
+	    	Activity.addActivity(account.getId(), "Oppotrunity bookmarked");
 	    }
         
         HttpHeaders headers = new HttpHeaders();
@@ -87,6 +93,8 @@ public class AccountController {
 	        for (Bookmark bookmark : bookmarks) {
 	        	if (bookmark.getObjectId().equals(objectId) && bookmark.getObjectType().equals(objectType)) {
 	        		bookmark.remove();
+	        		
+	        		Activity.addActivity(accountId, "Oppotrunity unbookmarked");
 	        	}
 	        }
         }
@@ -95,5 +103,16 @@ public class AccountController {
         headers.add("Content-Type", "application/json");
 
         return new ResponseEntity<String>(headers, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value="/{accountId}/activity", headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String>getActivities(@PathVariable("accountId") Long accountId) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+        
+        List<Activity> activities = Activity.findActivitiesByAccountId(accountId);
+        
+        return new ResponseEntity<String>(Activity.toJsonArray(activities), headers, HttpStatus.OK);
     }
 }

@@ -6,7 +6,7 @@ package com.livestormer.accounts.completeness;
 import com.livestormer.accounts.Account;
 import com.livestormer.accounts.completeness.AccountCompleteness;
 import com.livestormer.accounts.completeness.tasks.completeness.TaskCompleteness;
-import java.util.Set;
+import java.util.List;
 
 privileged aspect AccountCompleteness_Roo_JavaBean {
     
@@ -18,19 +18,11 @@ privileged aspect AccountCompleteness_Roo_JavaBean {
         this.account = account;
     }
     
-    public int AccountCompleteness.getRate() {
-        return this.rate;
-    }
-    
-    public void AccountCompleteness.setRate(int rate) {
-        this.rate = rate;
-    }
-    
-    public Set<TaskCompleteness> AccountCompleteness.getTaskCompletenesses() {
+    public List<TaskCompleteness> AccountCompleteness.getTaskCompletenesses() {
         return this.taskCompletenesses;
     }
     
-    public void AccountCompleteness.setTaskCompletenesses(Set<TaskCompleteness> taskCompletenesses) {
+    public void AccountCompleteness.setTaskCompletenesses(List<TaskCompleteness> taskCompletenesses) {
         this.taskCompletenesses = taskCompletenesses;
     }
     
